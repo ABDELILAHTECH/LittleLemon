@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;700&display=swap');
+// Color Variables
+$yellow-primary: #F4CE14;
+$green-primary: #495E57;
+$orange-secondary: #EE9972;
+$peach-secondary: #FBDABB;
+$light-neutral: #EDEFEE;
+$dark-neutral: #333333;
+
+// Font Variables
+$font-primary: 'Karla', sans-serif;
+$font-secondary: 'Markazi Text', serif;
+
+// Spacing Variables
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 24px;
+
+// Border Radius Variables
+$border-radius-small: 4px;
+$border-radius-medium: 8px;
+$border-radius-large: 12px;
+
+// Shadow Variables
+$shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 6px rgba(0, 0, 0, 0.1);
+$shadow-heavy: 0 10px 20px rgba(0, 0, 0, 0.1);
+
+// Transition Variables
+$transition-fast: 0.2s ease-in-out;
+$transition-medium: 0.5s ease-in-out;
+$transition-slow: 1s ease-in-out;
