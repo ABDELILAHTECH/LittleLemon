@@ -1,0 +1,64 @@
+@use "../Styles/variables.scss" as *;
+
+.about-section{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    .about-infos{
+        flex: 1;
+        .title-and-subtitle{
+           margin-bottom: 20px;
+        }
+    }
+    .about-imgs{
+        display: none;
+        position: relative;
+        margin: auto;
+        width: 500px;
+        height: 450px;
+        img{
+            width: 300px;
+            height: 300px;
+            border-radius: 16px;
+            transition: $transition-fast;
+            box-shadow: $shadow-medium;
+
+        }
+        :nth-child(1){
+            position: absolute;
+            right: 0;
+            z-index: 2;
+            &:hover{
+               transform: scale(1.1) rotate(-10deg);
+            }
+        }
+        :nth-child(2){
+            top: 150px;
+            z-index: 1;
+            position: absolute;
+            &:hover{
+               transform: scale(1.1) rotate(10deg);
+            }
+        }
+    }
+}
+@media (min-width:550px){
+    .about-section{
+        .about-imgs{
+            display: block;
+        }
+    }
+}
+@media (min-width:900px){
+    .about-section{
+        grid-template-columns:1fr 1fr;
+        justify-content: space-between;
+        .about-imgs{
+        width: 400px;
+           img{
+               width: 250px;
+           }
+        }
+    }
+    
+}

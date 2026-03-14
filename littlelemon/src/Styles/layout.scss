@@ -1,10 +1,95 @@
 @use "./variables" as *;
 body{
-    display: flex;
-    justify-content: center;
 }
 .container{
+    width: 100vw;
     display:flex;
     flex-direction: column;
     min-height: 100vh;
+}
+section , header,footer{
+    padding:1rem;
+}
+section{
+    padding: 4rem 1rem;
+}
+.hero{
+    padding: 3rem 1rem;
+}
+h1{
+    font-size: 64px;
+    font-family: $font-secondary;
+    color: $yellow-primary;
+    line-height: 40px;
+
+}
+h2{
+    font-size: 44px;
+    font-family: $font-secondary;
+}
+h3{
+    font-size: 36px;
+}
+p{
+    font-size: 18px;
+}
+button{
+    background-color: $yellow-primary;
+    color: $dark-neutral;
+    font-weight: 700;
+}
+@media (min-width:500px){
+    header{
+        padding: 1rem 2rem;
+    }
+    section,footer{
+        padding: 4rem 2rem;
+    }
+    .hero{
+        padding: 3rem 2rem;
+    }
+}
+@media (min-width:800px){
+    header{
+        padding: 1rem 4rem;
+    }
+    section,footer{
+        padding: 4rem 4rem;
+    }
+    .hero{
+        padding: 3rem 4rem;
+    }
+}
+@media (min-width:1200px){
+    header{
+        padding: 1rem 8rem;
+    }
+    section,footer{
+        padding: 4rem 8rem;
+    }
+    .hero{
+        padding: 3rem 8rem;
+    }
+}
+@media (min-width:1400px){
+    header{
+        padding: 1rem 15rem;
+    }
+    section,footer{
+        padding: 4rem 15rem;
+    }
+    .hero{
+        padding: 3rem 15rem;
+    }
+}
+@media (min-width:1600px){
+    header{
+        padding: 1rem 19rem;
+    }
+    section,footer{
+        padding: 4rem 19rem;
+    }
+    .hero{
+        padding: 3rem 19rem;
+    }
 }

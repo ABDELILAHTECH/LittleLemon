@@ -1,0 +1,40 @@
+@use "../Styles/variables" as *;
+.hero{
+    background-color: $green-primary;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.hero-infos{
+    color: $light-neutral;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 30px;
+    h1{
+        width: 300px;
+    }
+    p{
+        width: 250px;
+    }
+}
+.hero-img-container {
+    position: absolute;
+    right: 0%;
+    height: 400px;
+    width: 300px;
+    img{
+        display: none;
+        border-radius: $border-radius-large;
+       
+    }
+}
+@media (min-width:700px){
+    .hero-img-container{
+        img{
+            display: block;
+            
+        }
+    }
+}

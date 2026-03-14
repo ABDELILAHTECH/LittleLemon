@@ -1,0 +1,56 @@
+@use "../Styles/variables" as *;
+footer{
+    width: 100%;
+    background-color: $light-neutral;
+    color:$dark-neutral;
+    display: grid;
+    grid-template-areas:
+    "content  content"
+    "logo  copyright";
+    gap: 2rem; 
+}
+.list{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h4{
+        font-size: 1.2em;
+    }
+    p,a{
+        display: block;
+        font-size: 16px;
+        font-weight: 400;
+        margin: 2px 0;
+    }
+}
+.footer-logo{
+    width: 50px;
+    grid-area: logo;
+}
+.footer-content{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    grid-area: content;
+}
+.footer-copyright{
+    grid-area: copyright;
+    align-self: end;
+    justify-self: end;
+}
+@media (min-width:800px){
+    footer{
+        grid-template-areas: 
+        "logo content"
+        "copyright copyright";
+        gap: 4rem;
+    }
+    .footer-logo{
+        width: 100px;
+    }
+    .footer-copyright{
+        justify-self: center;
+    }
+}
+

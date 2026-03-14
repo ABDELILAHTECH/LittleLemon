@@ -1,0 +1,83 @@
+@use "../Styles/variables" as *;
+
+.specials{
+    padding-top:4rem;
+    padding-bottom: 4rem;
+    .specials-header{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap:20px;
+        align-items: center;
+        margin-bottom: 50px;
+        span{
+            font-size: 50px;
+        }
+    
+    }
+    .specials-cards{
+        display: grid;
+        grid-template-columns:1fr;
+        gap: 20PX;
+        .card{
+            background-color: $light-neutral;
+            border-radius: $border-radius-medium; 
+            .special-img-container{
+                height: 250px;
+                border-radius: $border-radius-medium 0 0 $border-radius-medium;
+                overflow: hidden;
+            }
+            .card-infos{
+                padding: 15px 20px;
+            }
+            .title-and-price{
+                display: flex;
+                justify-content: space-between;
+                .title{
+                    font-size: 20px;
+                    font-weight: 700;
+                }
+                .price{
+                    font-size: 1.1em;
+                    color: $orange-secondary;
+                }
+            }
+            .special-description{
+                padding: 15px 0;
+                font-size: 16px;
+                color: #495E57; 
+            }
+            .delivery-icon{
+                width: 20px;
+                margin: 0 10px;
+            }
+            
+        }
+    }
+}
+@media (min-width: 800px) {
+    .specials{
+        .specials-cards{
+            grid-template-columns: 1fr 1fr;
+            .card{
+                
+                .special-img-container{
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+@media (min-width: 1200px) {
+    .specials{
+        .specials-cards{
+            grid-template-columns: 1fr 1fr 1fr;
+            .card{
+                
+                .special-img-container{
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
