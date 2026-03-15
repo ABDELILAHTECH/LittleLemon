@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import { useNavigate } from "react-router-dom";
 import BookingForm from "../Components/BookingForm";
 import MainLayout from "./MainLayout";
 import "./BookingPage.scss";
@@ -25,10 +26,23 @@ export default function BookingPage() {
     initializeTimes
   );
 
+  const navigate = useNavigate();
+
+  const submitForm = (formData) => {
+    const success = submitAPI(formData);
+    if (success) {
+      navigate("/confirmed");
+    }
+  };
+
   return (
     <MainLayout>
       <h1>Reserve a table</h1>
-      <BookingForm availableTimes={availableTimes} dispatch={dispatch} />
+      <BookingForm
+        availableTimes={availableTimes}
+        dispatch={dispatch}
+        submitForm={submitForm}
+      />
     </MainLayout>
   );
 }

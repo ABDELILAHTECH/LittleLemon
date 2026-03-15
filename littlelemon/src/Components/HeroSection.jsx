@@ -1,5 +1,6 @@
 import "./HeroSection.scss"
 import heroImage from "../assets/Images/restauranfood.jpg"
+import { Link } from "react-router-dom"
 export default function HeroSection() {
   return (
     <section className="hero">
@@ -10,7 +11,11 @@ export default function HeroSection() {
           </div>
           <p>We are a family owned Mediterranean restaurant, focused
              on traditional recipes served with a modern twist.</p>
-          <button>Reserve a Table</button>
+          <button>
+            <Link to='/reservations' >
+              Reserve a Table
+            </Link>
+          </button>
         </div>
         <div style={{position:"relative"}}>
           <div className="hero-img-container">

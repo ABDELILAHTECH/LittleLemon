@@ -26,7 +26,7 @@ export default function Specials() {
     },
   ];
   return (
-    <section className="specials">
+    <section id='menu' className="specials">
       <div className='specials-header'>
         <span>This Week's Specials!</span>
         <button>Online Menu</button>

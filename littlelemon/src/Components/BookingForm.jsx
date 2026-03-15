@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./BookingForm.scss";
 
-export default function BookingForm({ availableTimes, dispatch }) {
+export default function BookingForm({ availableTimes, dispatch, submitForm }) {
   const [form, setForm] = useState({
     FullName: "",
     date: "",
@@ -28,19 +28,8 @@ export default function BookingForm({ availableTimes, dispatch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const success = submitAPI(form); // ✅ window.submitAPI
-    if (success) {
-      dispatch({ type: "RESERVE_TIME", time: form.time });
-      setForm({
-        FullName: "",
-        date: form.date,
-        time: availableTimes[0] || "",
-        guests: 1,
-        Occasion: "None",
-      });
-    }
+    submitForm(form); 
   };
-
   return (
     <form onSubmit={handleSubmit} className="booking-form">
       <label htmlFor="fullname">Full Name</label>
