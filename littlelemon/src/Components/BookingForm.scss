@@ -1,0 +1,57 @@
+@use "../Styles/variables" as *;
+
+.booking-form {
+  margin: 2rem ;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: $light-neutral;
+  border:$green-primary 1px solid;
+  border-radius: $border-radius-medium;
+  box-shadow: $shadow-medium;
+
+  label {
+    font-weight: 600;
+    color: $dark-neutral;
+  }
+
+  input,
+  select {
+    background-color: transparent;
+    color: $dark-neutral;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: $border-radius-small;
+    font-family: $font-primary;
+    transition: $transition-fast;
+
+    &:focus {
+      outline: none;
+      border-color: $green-primary;
+    }
+  }
+
+  input[type="submit"] {
+    margin-top: 1rem;
+    background-color: $yellow-primary;
+    color: $dark-neutral;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    &:hover {
+      background-color: $green-primary;
+      color:$light-neutral;
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+
+    }
+  }
+}

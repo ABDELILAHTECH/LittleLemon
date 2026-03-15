@@ -4,7 +4,7 @@ export default function HeroSection() {
   return (
     <section className="hero">
         <div className="hero-infos">
-          <div>
+          <div className="title-subtitle">
             <h1>Little Lemon</h1>
             <h3>Chicago</h3>
           </div>

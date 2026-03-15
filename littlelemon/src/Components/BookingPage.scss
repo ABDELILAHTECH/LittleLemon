@@ -1,0 +1,7 @@
+@use '../Styles/variables.scss' as *;
+
+h1{
+    color: $green-primary;
+    text-align: center;
+    margin-bottom: 2rem;
+}

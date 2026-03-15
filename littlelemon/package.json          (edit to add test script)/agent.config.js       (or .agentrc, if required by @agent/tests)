@@ -1,0 +1,20 @@
+{
+  "name": "littlelemon",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "agent test"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@agent/tests": "^1.0.0"
+  }
+}
+
+module.exports = {
+  testEnvironment: 'node',
+  testTimeout: 10000
+};
+
+test('hello world!', () => {
+  expect(true).toBe(true);
+});

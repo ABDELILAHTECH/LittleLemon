@@ -12,9 +12,15 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 30px;
+    .title-subtitle{       
+    }
     h1{
         width: 300px;
+        color: $yellow-primary;
+        margin: 0%;
+
     }
+
     p{
         width: 250px;
     }

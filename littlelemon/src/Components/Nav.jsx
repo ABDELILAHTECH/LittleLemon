@@ -1,4 +1,5 @@
 import "./Nav.scss" 
+import {Link} from "react-router-dom"
 export default function Nav({direction = "row"}) {
   const navItems = ['Home', 'About', 'Menu', 'Reservations', 'Order Online', 'Login']
  
@@ -9,7 +10,9 @@ export default function Nav({direction = "row"}) {
       <ul>
         {navItems.map((item) => (
           <li key={item}>
-            <a href={`/${item.toLowerCase().replace(' ', '-')}`}>{item}</a>
+            <Link to={`/${item.toLowerCase().replace(' ', '-')}`}>
+            {item}
+            </Link>
           </li>
         ))}
       </ul>

@@ -10,7 +10,7 @@ export default function App() {
     <div className="container">
       <Routes>
         <Route path='/' element={<HomePage />} />
-        <Route path='/booking' element={<BookingPage />} />
+        <Route path='/reservations' element={<BookingPage />} />
       </Routes>
     </div>
   )

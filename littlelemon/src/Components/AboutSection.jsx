@@ -4,7 +4,7 @@ import RestaurantImg2 from "../assets/Images/restaurantImg2.jpg"
 
 export default function About() {
   return (
-    <section className="about-section">
+    <section id="about" className="about-section">
         <div className="about-infos">
             <div className="title-and-subtitle">
               <h1>Little Lemon</h1>

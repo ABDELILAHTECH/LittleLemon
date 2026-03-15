@@ -8,6 +8,14 @@
         flex: 1;
         .title-and-subtitle{
            margin-bottom: 20px;
+           h1{
+            margin: 0%;
+            color: $dark-neutral;
+            text-align: left;
+           }
+           h3{
+             color: $orange-secondary;
+           }
         }
     }
     .about-imgs{
@@ -22,6 +30,9 @@
             border-radius: 16px;
             transition: $transition-fast;
             box-shadow: $shadow-medium;
+            &:hover{
+                z-index: 3;
+            }
 
         }
         :nth-child(1){
