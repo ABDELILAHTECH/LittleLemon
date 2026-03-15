@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./BookingForm.scss";
 
 export default function BookingForm({ availableTimes, dispatch }) {
@@ -11,37 +10,36 @@ export default function BookingForm({ availableTimes, dispatch }) {
     Occasion: "None",
   });
 
+  // ✅ Met à jour time automatiquement quand availableTimes change
+  useEffect(() => {
+    if (availableTimes.length > 0) {
+      setForm((prev) => ({ ...prev, time: availableTimes[0] }));
+    }
+    console.log("availabletimes",availableTimes)
+  }, [availableTimes]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    setForm((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-
+    setForm((prev) => ({ ...prev, [name]: value }));
     if (name === "date") {
-      dispatch({
-        type: "UPDATE_TIMES",
-        date: value,
-      });
+      dispatch({ type: "UPDATE_TIMES", date: value });
     }
   };
 
   const handleSubmit = (e) => {
-  e.preventDefault();
-
-  console.log("Reservation submitted:", form);
-
-  dispatch({ type: "RESERVE_TIME", time: form.time });
-
-  setForm({
-    FullName: "",
-    date: form.date, 
-    time: availableTimes[0] || "",
-    guests: 1,
-    Occasion: "None"
-  });
-};
+    e.preventDefault();
+    const success = submitAPI(form); // ✅ window.submitAPI
+    if (success) {
+      dispatch({ type: "RESERVE_TIME", time: form.time });
+      setForm({
+        FullName: "",
+        date: form.date,
+        time: availableTimes[0] || "",
+        guests: 1,
+        Occasion: "None",
+      });
+    }
+  };
 
   return (
     <form onSubmit={handleSubmit} className="booking-form">
@@ -100,8 +98,11 @@ export default function BookingForm({ availableTimes, dispatch }) {
         <option value="Anniversary">Anniversary</option>
       </select>
 
-      <input type="submit" value="Make Your Reservation" disabled={!form.FullName || !form.date || !form.time} />
-    
+      <input
+        type="submit"
+        value="Make Your Reservation"
+        disabled={!form.FullName || !form.date || !form.time}
+      />
     </form>
   );
 }
