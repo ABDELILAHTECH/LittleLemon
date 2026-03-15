@@ -14,7 +14,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-nav list">
             <h4>Navigation</h4>
-            <Nav direction='column' />
+            <Nav direction='column' label='Footer Navigation' />
           </div>
           <div className="contact list">
             <h4>Contact Us</h4>

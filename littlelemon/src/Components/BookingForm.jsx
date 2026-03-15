@@ -1,3 +1,4 @@
+import React from "react";
 import { useState, useEffect } from "react";
 import "./BookingForm.scss";
 
@@ -79,80 +80,101 @@ export default function BookingForm({ availableTimes, dispatch, submitForm }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="booking-form" noValidate>
+    <form onSubmit={handleSubmit} className="booking-form" noValidate aria-label="Reservation Form">
 
-      <label htmlFor="fullname">Full Name</label>
-      <input
-        type="text"
-        id="fullname"
-        name="FullName"
-        value={form.FullName}
-        onChange={handleChange}
-        required
-        minLength={2}
-        placeholder="Enter your full name"
-      />
-      {errors.FullName && <span className="error">{errors.FullName}</span>}
+  <label htmlFor="fullname">Full Name</label>
+  <input
+    type="text"
+    id="fullname"
+    name="FullName"
+    value={form.FullName}
+    onChange={handleChange}
+    required
+    minLength={2}
+    placeholder="Enter your full name"
+    aria-required="true"
+    aria-invalid={!!errors.FullName}
+    aria-describedby="fullname-error"
+  />
+  {errors.FullName && (
+    <span id="fullname-error" className="error" role="alert">
+      {errors.FullName}
+    </span>
+  )}
 
-      <label htmlFor="res-date">Choose date</label>
-      <input
-        type="date"
-        id="res-date"
-        name="date"
-        value={form.date}
-        onChange={handleChange}
-        required
-        min={new Date().toISOString().split("T")[0]}
-      />
-      {errors.date && <span className="error">{errors.date}</span>}
+  <label htmlFor="res-date">Choose date</label>
+  <input
+    type="date"
+    id="res-date"
+    name="date"
+    value={form.date}
+    onChange={handleChange}
+    required
+    min={new Date().toISOString().split("T")[0]}
+    aria-required="true"
+    aria-invalid={!!errors.date}
+    aria-describedby="date-error"
+  />
+  {errors.date && (
+    <span id="date-error" className="error" role="alert">
+      {errors.date}
+    </span>
+  )}
 
-      <label htmlFor="res-time">Choose time</label>
-      <select
-        id="res-time"
-        name="time"
-        value={form.time}
-        onChange={handleChange}
-        required
-      >
-        {availableTimes.map((time) => (
-          <option key={time} value={time}>
-            {time}
-          </option>
-        ))}
-      </select>
-      {errors.time && <span className="error">{errors.time}</span>}
+  <label htmlFor="res-time">Choose time</label>
+  <select
+    id="res-time"
+    name="time"
+    value={form.time}
+    onChange={handleChange}
+    required
+    aria-required="true"
+  >
+    {availableTimes.map((time) => (
+      <option key={time} value={time}>{time}</option>
+    ))}
+  </select>
 
-      <label htmlFor="guests">Number of guests</label>
-      <input
-        type="number"
-        id="guests"
-        name="guests"
-        min="1"
-        max="10"
-        value={form.guests}
-        onChange={handleChange}
-        required
-      />
-      {errors.guests && <span className="error">{errors.guests}</span>}
+  <label htmlFor="guests">Number of guests</label>
+  <input
+    type="number"
+    id="guests"
+    name="guests"
+    min="1"
+    max="10"
+    value={form.guests}
+    onChange={handleChange}
+    required
+    aria-required="true"
+    aria-invalid={!!errors.guests}
+    aria-describedby="guests-error"
+  />
+  {errors.guests && (
+    <span id="guests-error" className="error" role="alert">
+      {errors.guests}
+    </span>
+  )}
 
-      <label htmlFor="occasion">Occasion</label>
-      <select
-        id="occasion"
-        name="Occasion"
-        value={form.Occasion}
-        onChange={handleChange}
-      >
-        <option value="None">None</option>
-        <option value="Birthday">Birthday</option>
-        <option value="Anniversary">Anniversary</option>
-      </select>
+  <label htmlFor="occasion">Occasion</label>
+  <select
+    id="occasion"
+    name="Occasion"
+    value={form.Occasion}
+    onChange={handleChange}
+    aria-label="Select occasion"
+  >
+    <option value="None">None</option>
+    <option value="Birthday">Birthday</option>
+    <option value="Anniversary">Anniversary</option>
+  </select>
 
-      <input
-        type="submit"
-        value="Make Your Reservation"
-        disabled={!isFormValid()}
-      />
+  <input
+    type="submit"
+    value="Make Your Reservation"
+    disabled={!isFormValid()}
+    aria-label="On Click"
+  />
 
-    </form>
+</form>
   );
 }

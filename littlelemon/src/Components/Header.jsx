@@ -4,9 +4,9 @@ import "./Header.scss"
 
 export default function Header() {
   return (
-    <header>
+    <header aria-label='Little Lemon Header' >
         <Logo />
-        <Nav />
+        <Nav label='Main Navigation' />
     </header>
   )
 }
