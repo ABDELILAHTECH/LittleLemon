@@ -1,14 +1,31 @@
 
-.nav-row{
-    ul{
-        display: flex;
-        gap:20px;
-        li{
-            a{
-                font-weight: 700;
-            }
-        }    
+.nav-row {
+  ul {
+    display: flex;
+    gap: 2rem;
+  }
+
+  @media (max-width: 850px) {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+
+    &.open {
+      display: flex;
     }
+
+    ul {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  }
 }
 .nav-column{
     ul{
